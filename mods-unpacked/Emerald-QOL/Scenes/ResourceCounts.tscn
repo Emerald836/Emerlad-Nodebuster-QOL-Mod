@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbu2mtaigtrrv"]
+
+[ext_resource type="Script" path="res://mods-unpacked/Emerald-QOL/Scripts/ResourceCounts.gd" id="1_a8fls"]
+[ext_resource type="PackedScene" uid="uid://cwkr8afxbywks" path="res://Scenes/UI/ResourcePanel.tscn" id="1_w37lj"]
+
+[node name="ResourceCounts" type="VBoxContainer"]
+script = ExtResource("1_a8fls")
+
+[node name="Bits" parent="." instance=ExtResource("1_w37lj")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Nodes" parent="." instance=ExtResource("1_w37lj")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Cores" parent="." instance=ExtResource("1_w37lj")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="SP" parent="." instance=ExtResource("1_w37lj")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Netcoin" parent="." instance=ExtResource("1_w37lj")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Processors" parent="." instance=ExtResource("1_w37lj")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2

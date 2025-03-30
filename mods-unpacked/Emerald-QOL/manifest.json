@@ -1,0 +1,23 @@
+{
+	"name": "QOL",
+	"namespace": "Emerald",
+	"version_number": "1.0.0",
+	"description": "Mod description goes here",
+	"website_url": "https://github.com/example/repo",
+	"dependencies": [
+	],
+	"extra": {
+		"godot": {
+			"authors": ["Emerald"],
+			"tags": [],
+			"description_rich": "",
+			"optional_dependencies": [],
+			"load_before": [],
+			"incompatibilities": [
+			],
+			"compatible_mod_loader_version": ["6.2.0"],
+			"compatible_game_version": ["1.3"],
+			"config_schema": {}
+		}
+	}
+}
