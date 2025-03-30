@@ -1,5 +1,4 @@
 extends Node
-class_name QOLMain
 
 var mod_data: Dictionary = {
 	"speed_scale": 0,
@@ -13,6 +12,11 @@ const MOD_OPTION_BTN = preload("res://mods-unpacked/Emerald-QOL/Scenes/ModOption
 
 var battleScene: BattleScene
 const RESOURCE_COUNTS = preload("res://mods-unpacked/Emerald-QOL/Scenes/ResourceCounts.tscn")
+
+
+#func _init():
+	#ModLoaderMod.add_hook(_add_mod_menu_to_options,"res://Scenes/Popups/Options/OptionsPopup.tscn","_ready")
+
 
 func _ready():
 	get_tree().node_added.connect(_node_added)
@@ -38,11 +42,20 @@ func _add_resource_counts_to_battle_scene(battleScn:BattleScene) -> void:
 	battleScn.ui.call_deferred("add_child",resourceScene)
 
 
-func _add_mod_menu_to_options(options:OptionsPopup) -> void:
+func _add_mod_menu_to_options(option:OptionsPopup) -> void:
+	print("test")
+	#chain.execute_next()
 	var modScene = MOD_OPTION_BTN.instantiate()
 	modScene.main = self
-	options.options_vbox.call_deferred("add_child",modScene)
+	#modScene.ready.connect(_is_mod_button_ready.bind(modScene))
+	optionsPopup.options_vbox.call_deferred("add_child",modScene)
 
+
+#func _is_mod_button_ready(modScene:ModOptionButton) -> void:
+#	modScene.mod_button = modScene.get_child(0)
+#	if ModLoaderMod.is_mod_loaded("Emerald-QOL"):
+#		modScene.mod_button.main_color = Color.RED
+#	if modScene.mod_button.pressed.is_connected(modScene._on_options_pressed) == false: modScene.mod_button.pressed.connect(modScene._on_options_pressed)
 
 func get_option(option_id: String) -> Variant:
 	return mod_data.get(option_id, 0)

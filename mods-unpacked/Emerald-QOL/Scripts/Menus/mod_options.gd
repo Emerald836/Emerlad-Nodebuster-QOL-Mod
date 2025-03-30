@@ -6,7 +6,7 @@ signal back()
 @onready var back_btn = %BackBtn
 @onready var options_vbox = %OptionsVBox
 
-var main: QOLMain
+var main: Node
 
 func _ready():
 	back_btn.pressed.connect(_on_back)

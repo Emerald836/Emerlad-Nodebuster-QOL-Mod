@@ -7,6 +7,7 @@
 custom_minimum_size = Vector2(128, 20)
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
 script = ExtResource("1_q7xur")
 
 [node name="TextButton" parent="." instance=ExtResource("1_78t22")]
@@ -17,3 +18,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 btn_text = "Mod Options"
+
+[connection signal="pressed" from="TextButton" to="." method="_on_options_pressed"]
