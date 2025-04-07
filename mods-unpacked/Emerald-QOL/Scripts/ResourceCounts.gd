@@ -31,3 +31,4 @@ func _process(delta):
 	cores.visible = State.cores_unlocked
 	sp.visible = State.sp_unlocked
 	netcoin.visible = State.netcoin_unlocked
+	processors.visible = State.processors_unlocked

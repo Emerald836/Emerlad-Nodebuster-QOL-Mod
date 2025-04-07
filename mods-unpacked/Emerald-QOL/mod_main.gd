@@ -29,6 +29,10 @@ func _node_added(node: Node) -> void:
 	if node is BattleScene:
 		battleScene = node
 		node.ready.connect(_add_resource_counts_to_battle_scene.bind(node))
+		apply_option("speed_scale",mod_data["speed_scale"])
+	if node is UpgradeTree:
+		if mod_data["speed_scale"] >= 3:
+			Engine.time_scale = 2.5
 
 func _node_removed(node: Node) -> void:
 	if node is OptionsPopup:
@@ -42,8 +46,8 @@ func _add_resource_counts_to_battle_scene(battleScn:BattleScene) -> void:
 	battleScn.ui.call_deferred("add_child",resourceScene)
 
 
-func _add_mod_menu_to_options(option:OptionsPopup) -> void:
-	print("test")
+func _add_mod_menu_to_options(_option:OptionsPopup) -> void:
+	#print("test")
 	#chain.execute_next()
 	var modScene = MOD_OPTION_BTN.instantiate()
 	modScene.main = self
